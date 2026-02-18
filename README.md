@@ -1,39 +1,26 @@
-# 🇮🇳 AI Strategy Hub Pro  
-## E-Ticaret Büyüme & Fiyatlandırma Zekası Platformu
+# 🇮🇳 AI Strategy Hub Pro: E-Ticaret Büyüme & Fiyatlandırma Zekası
 
-AI Strategy Hub Pro, **büyük ölçekli e-ticaret veri setlerini** uçtan uca analiz ederek **stratejik karar destek mekanizmalarına** dönüştüren, **Data Engineering + Advanced Machine Learning + Time Series Forecasting** disiplinlerini harmanlayan profesyonel bir **CEO Dashboard & Karar Destek Platformudur.**
+Bu proje, **büyük e-ticaret veri setlerini** işleyerek stratejik karar destek mekanizmalarına dönüştüren, **Data Engineering ve Advanced Machine Learning** disiplinlerini harmanlayan uçtan uca bir analitik platformdur.
 
-Başlangıçta klasik bir analiz aracı olarak tasarlanan sistem; **Multi-Page SaaS mimarisi**, **AutoML yarış motoru**, **3D K-Means müşteri segmentasyonu**, **çift motorlu zaman serisi tahmini** ve **Next-Gen A/B Strateji Simülatörü** ile **kurumsal seviye bir strateji platformuna** evrilmiştir.
+Başlangıçta temel bir analiz aracı olarak tasarlanan sistem; **Multi-Page App (Çok Sayfalı Uygulama)** mimarisine geçirilmiş, **K-Means Kümeleme**, **Gelişmiş Zaman Serisi Ayrışımı** ve **A/B Senaryo Simülatörü** ile donatılarak bir **"CEO Dashboard"** seviyesine taşınmıştır.
 
----
 
-# 🚀 Platformun Temel Vizyonu
+## 🏗️ Proje Mimarisi ve Dosya Yapısı
 
-Bu sistemin amacı:
+Proje, yönetilebilirliği artırmak ve performansı optimize etmek için modüler bir yapıya sahiptir:
 
-- Karar vericilere **veriye dayalı büyüme stratejileri üretmek**
-- Fiyatlandırma, satış, pazarlama ve operasyon kararlarını **yapay zeka destekli** hale getirmek
-- Ham veriyi **doğrudan aksiyona dönüşen içgörülere** çevirmek
-- Teknik karmaşıklığı gizleyip **CEO seviyesinde yalın arayüz** sunmaktır.
-
----
-
-# 🏗️ Proje Mimarisi & Dosya Yapısı
-
-Proje, **yüksek modülerlik**, **okunabilirlik** ve **ölçeklenebilirlik** prensipleri ile tasarlanmıştır.
-
-india
+📁 AI_Strategy_Hub_Pro
 │
-├── 🏠 Home.py                 # Ana giriş, session yönetimi, global state
-├── ⚙️ utils.py                # ETL motoru: veri yükleme, temizleme, preprocessing
+├── 🏠 Home.py                 # Ana Giriş ve Ayar Merkezi (Session State Yönetimi)
+├── ⚙️ utils.py                # ETL Motoru (Veri Yükleme, Temizleme, Önişleme)
 │
 └── 📂 pages
-    ├── 1_Veri_Analizi.py        # İleri seviye EDA & KPI Dashboard
-    ├── 2_automl_.py  # ML Modelleme & 3D K-Means Segmentasyon
-    ├── 3_time_series.py  # ML Modelleme & 3D K-Means Segmentasyon
-    ├── 4_simulator.py  # ML Modelleme & 3D K-Means Segmentasyon
+    ├── 1_📊_Veri_Analizi.py        # İleri Seviye EDA & KPI Dashboard
+    ├── 2_🤖_AutoML_ve_Kumeleme.py  # Model Eğitimi & Müşteri Segmentasyonu (3D)
+    ├── 3_📈_Zaman_Serisi.py        # Trend Analizi & Gelecek Tahmini
+    └── 4_🎯_Strateji_Simulatoru.py # A/B Testi & Fiyat Optimizasyonu
 
----
+
 
 # 🚀 Modüller & Analitik Yetenekler
 
@@ -188,5 +175,3 @@ sorusuna **otomatik zirve tespiti** yaparak cevap verir.
 | UI/UX | Custom CSS, Metric Cards, Modern Dashboard UI |
 
 ---
-    ├── 3_📈_Zaman_Serisi.py        # Forecasting & Trend Analizi
-    └── 4_🎯_Strateji_Simulatoru.py # A/B Testi & Fiyat Optimizasyonu

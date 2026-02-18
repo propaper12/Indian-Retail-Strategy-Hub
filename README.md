@@ -174,4 +174,7 @@ sorusuna **otomatik zirve tespiti** yaparak cevap verir.
 | Visualization | Plotly Express & Graph Objects |
 | UI/UX | Custom CSS, Metric Cards, Modern Dashboard UI |
 
+stremlit uygulaması:https://an-open-source-real-time-financial-lakehouse-project-yjuh6geau.streamlit.app/
+
+https://an-open-source-real-time-financial-lakehouse-project-yjuh6geau.streamlit.app/
 ---

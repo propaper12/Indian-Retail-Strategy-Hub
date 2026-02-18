@@ -174,7 +174,21 @@ sorusuna **otomatik zirve tespiti** yaparak cevap verir.
 | Visualization | Plotly Express & Graph Objects |
 | UI/UX | Custom CSS, Metric Cards, Modern Dashboard UI |
 
-stremlit uygulaması:https://an-open-source-real-time-financial-lakehouse-project-yjuh6geau.streamlit.app/
+stremlit uygulaması:https://an-open-source-real-time-financial-lakehouse-project-yjuh6geau.streamlit.app
+<img width="2379" height="1167" alt="Ekran görüntüsü 2026-02-18 181546" src="https://github.com/user-attachments/assets/755fde05-40a0-4924-8a83-92067b0a6616" />
+<img width="1192" height="796" alt="Ekran görüntüsü 2026-02-18 181824" src="https://github.com/user-attachments/assets/27c5c47f-eef3-4241-89db-17072ea4d3e0" />
+<img width="2322" height="1305" alt="Ekran görüntüsü 2026-02-18 181813" src="https://github.com/user-attachments/assets/5a63f314-89d5-4b7d-bca3-73db956b4a56" /><img width="2366" height="1439" alt="Ekran görüntüsü 2026-02-18 181603" src="https://github.com/user-attachments/assets/231ba4d6-9898-4e34-907e-5b26d4d04b5c" />
+<img width="2352" height="1106" alt="Ekran görüntüsü 2026-02-18 181617" src="https://github.com/user-attachments/assets/178389e0-1468-44ad-9c48-87b0c0a38ccb" />
+<img width="2333" height="1051" alt="Ekran görüntüsü 2026-02-18 181628" src="https://github.com/user-attachments/assets/fd1f7848-22c7-49f0-8ce3-2d97fd4e3661" />
+<img width="2330" height="1376" alt="Ekran görüntüsü 2026-02-18 181638" src="https://github.com/user-attachments/assets/ede066fa-c0b9-48f6-860c-d2de6d8a7f3f" />
+<img width="149" height="80" alt="Ekran görüntüsü 2026-02-18 181755" src="https://github.com/user-attachments/assets/bcf3a217-702e-4e36-b6f2-e03f7354d37f" />
+<img width="2365" height="1173" alt="Ekran görüntüsü 2026-02-18 181526" src="https://github.com/user-attachments/assets/10060644-71ee-4e92-86fe-00c9d9a0809e" />
+<img width="2362" height="1199" alt="Ekran görüntüsü 2026-02-18 181538" src="https://github.com/user-attachments/assets/9b3d5719-c2ee-479c-9bf4-7b0f4db4f848" />
+<img width="2314" height="1319" alt="Ekran görüntüsü 2026-02-18 181507" src="https://github.com/user-attachments/assets/5d7e3647-e437-4558-9cce-9f1dcec8388b" />
+<img width="2342" height="1210" alt="Ekran görüntüsü 2026-02-18 181517" src="https://github.com/user-attachments/assets/a2bc6b42-bb54-45e3-b7b0-2222fb4c0519" />
+<img width="2416" height="1395" alt="Ekran görüntüsü 2026-02-18 181851" src="https://github.com/user-attachments/assets/e4484330-15a3-41c1-895f-0a9df7c3e819" />
+<img width="2427" height="1425" alt="Ekran görüntüsü 2026-02-18 181924" src="https://github.com/user-attachments/assets/9c7c67d2-7d23-4388-afc9-738ea2f3dae1" />
+
 
 https://an-open-source-real-time-financial-lakehouse-project-yjuh6geau.streamlit.app/
 ---

@@ -22,7 +22,6 @@ Bu sistemin amacı:
 
 Proje, **yüksek modülerlik**, **okunabilirlik** ve **ölçeklenebilirlik** prensipleri ile tasarlanmıştır.
 
-```text
 india
 │
 ├── 🏠 Home.py                 # Ana giriş, session yönetimi, global state
@@ -189,14 +188,5 @@ sorusuna **otomatik zirve tespiti** yaparak cevap verir.
 | UI/UX | Custom CSS, Metric Cards, Modern Dashboard UI |
 
 ---
-
-# 📌 Kurulum & Çalıştırma
-
-
-
-
-
-
-
     ├── 3_📈_Zaman_Serisi.py        # Forecasting & Trend Analizi
     └── 4_🎯_Strateji_Simulatoru.py # A/B Testi & Fiyat Optimizasyonu

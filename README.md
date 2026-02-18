@@ -1,125 +1,202 @@
-Bu proje; **perakende sektöründe büyük veri (Big Data) setlerini stratejik karar destek mekanizmalarına dönüştürmek** amacıyla tasarlanmış, **Data Engineering ve Machine Learning disiplinlerini harmanlayan ileri seviye bir analitik platformdur**.
+# 🇮🇳 AI Strategy Hub Pro  
+## E-Ticaret Büyüme & Fiyatlandırma Zekası Platformu
 
-Ramazan serisinin **2. haftasında**, ilk projenin üzerine **Explainable AI (XAI)** ve **Time Series Forecasting** katmanları eklenerek geliştirilmiştir.
+AI Strategy Hub Pro, **büyük ölçekli e-ticaret veri setlerini** uçtan uca analiz ederek **stratejik karar destek mekanizmalarına** dönüştüren, **Data Engineering + Advanced Machine Learning + Time Series Forecasting** disiplinlerini harmanlayan profesyonel bir **CEO Dashboard & Karar Destek Platformudur.**
 
----
-
-# 🏗️ Sistem Mimarisi ve Pipeline Akışı
-
-Platform, ham veriyi alıp **aksiyon alınabilir stratejik içgörülere** dönüştürürken aşağıdaki katmanlardan geçer:
+Başlangıçta klasik bir analiz aracı olarak tasarlanan sistem; **Multi-Page SaaS mimarisi**, **AutoML yarış motoru**, **3D K-Means müşteri segmentasyonu**, **çift motorlu zaman serisi tahmini** ve **Next-Gen A/B Strateji Simülatörü** ile **kurumsal seviye bir strateji platformuna** evrilmiştir.
 
 ---
 
-## 1️⃣ Veri Mühendisliği & Preprocessing (Data Engine)
+# 🚀 Platformun Temel Vizyonu
 
-### 🎯 Target Leakage Guard
-Modelin gelecekteki bilgileri (**Revenue, Units Sold, Final Price**) kullanarak *hile yapmasını* engellemek için **dinamik feature exclusion mekanizması** kurulmuştur.
+Bu sistemin amacı:
 
-### 🔡 Label Encoding & Optimization
-Kategorik değişkenler (**Brand Type, Zone, Category**) modelin **hiyerarşik ilişkileri anlayabileceği** şekilde encode edilirken **bellek ve hız optimizasyonu** sağlanmıştır.
-
-### 🧹 Statik & Dinamik Temizlik
-- Eksik değerler (**NaN**)  
-- Aykırı değerler (**Outliers**)  
-
-**IQR yöntemi** ile analiz edilerek temizlenmiştir.
+- Karar vericilere **veriye dayalı büyüme stratejileri üretmek**
+- Fiyatlandırma, satış, pazarlama ve operasyon kararlarını **yapay zeka destekli** hale getirmek
+- Ham veriyi **doğrudan aksiyona dönüşen içgörülere** çevirmek
+- Teknik karmaşıklığı gizleyip **CEO seviyesinde yalın arayüz** sunmaktır.
 
 ---
 
-## 2️⃣ AutoML & Model Yarışması (Model Laboratory)
+# 🏗️ Proje Mimarisi & Dosya Yapısı
 
-Proje, tek bir algoritmaya güvenmek yerine **Model Yarışması (Leaderboard)** mimarisi ile çalışır.
+Proje, **yüksek modülerlik**, **okunabilirlik** ve **ölçeklenebilirlik** prensipleri ile tasarlanmıştır.
 
-### 🔬 Kullanılan Algoritmalar
+```text
+india
+│
+├── 🏠 Home.py                 # Ana giriş, session yönetimi, global state
+├── ⚙️ utils.py                # ETL motoru: veri yükleme, temizleme, preprocessing
+│
+└── 📂 pages
+    ├── 1_Veri_Analizi.py        # İleri seviye EDA & KPI Dashboard
+    ├── 2_automl_.py  # ML Modelleme & 3D K-Means Segmentasyon
+    ├── 3_time_series.py  # ML Modelleme & 3D K-Means Segmentasyon
+    ├── 4_simulator.py  # ML Modelleme & 3D K-Means Segmentasyon
+
+---
+
+# 🚀 Modüller & Analitik Yetenekler
+
+## 1️⃣ 📊 İleri Seviye Veri Analizi (Advanced EDA & BI)
+
+Ham veriyi, **doğrudan iş kararına dönüşebilecek stratejik içgörülere** çeviren gelişmiş BI katmanıdır.
+
+### Sunulan Analitikler
+
+### 🔹 Pareto Analizi (80/20 Kuralı)
+- Gelirin %80’ini oluşturan:
+  - Kritik ürün grupları  
+  - En değerli müşteri segmentleri  
+- Gelir yoğunluk optimizasyonu
+
+### 🔹 Coğrafi Pazar Analizi
+Bölge & eyalet bazlı:
+- Ciro
+- Sipariş yoğunluğu
+- Pazar payı
+
+### 🔹 Korelasyon Isı Haritası (Heatmap)
+- Fiyat – talep – satış – kâr ilişkilerinin:
+  - Gizli bağıntıları
+  - Nedensel sinyalleri
+
+### 🔹 Outlier Detection (Aykırı Değer Analizi)
+IQR tabanlı anomali tespiti ile:
+- Hatalı veri girişleri
+- Fraud sinyalleri
+- Operasyonel risk alanları
+
+---
+
+## 2️⃣ 🤖 AutoML & 3D K-Means Segmentasyon Laboratuvarı
+
+Makine öğrenmesini demokratikleştiren ve **karar destek altyapısının çekirdeğini oluşturan AI motoru**.
+
+### 🧠 AutoML Yarış Motoru
+
+Aynı anda eğitilen modeller:
+- Linear Regression  
+- Random Forest  
 - XGBoost  
 - LightGBM  
-- Random Forest  
-- Voting Ensemble (Hibrit Model)
 
-### 📏 Değerlendirme Metrikleri
-- **R²** → Model başarısı  
-- **MAE** → Ortalama mutlak hata  
-- **RMSE** → Hata kareler ortalaması  
+### 🔎 Otomatik Model Seçimi
 
-### 🏆 Champion Model Selection
-Sistem, **en yüksek R² değerine sahip modeli otomatik olarak "Şampiyon Model"** ilan eder ve **tüm dashboard analizleri bu beyin üzerine inşa edilir**.
+Performans kriterleri:
+- R²
+- RMSE
+- MAE
 
----
+En iyi modeli **tam otomatik olarak seçer.**
 
-## 3️⃣ Explainable AI (XAI) & Karar Şeffaflığı
+### 📈 Model Analitiği
 
-Yapay zekanın **neden bu sonucu verdiğini açıklamak** için iki güçlü metodoloji entegre edilmiştir:
-
-### 🌍 Global Explanation — SHAP
-Modelin genel stratejisinde **hangi değişkenlerin daha etkili olduğunu** gösterir.  
-*(Örn: İndirim oranı, Marka tipi, Bölge, Kampanya etkisi)*
-
-### 🔍 Local Explanation — LIME
-Tekil işlem ve ürün bazında, **modelin verdiği kararın gerekçelerini** açıklar.
+- Gerçek vs Tahmin grafikleri
+- Residual dağılım analizi
+- Hata yoğunluk haritaları
 
 ---
 
-## 4️⃣ Zaman Serisi & Forecasting Katmanı
+### 🎯 Unsupervised Learning: 3D K-Means Müşteri Segmentasyonu
 
-Geçmiş **36 aylık veri** kullanılarak geleceğe yönelik projeksiyonlar üretilir:
+Müşterileri şu değişkenlere göre **davranışsal kümelere ayırır:**
 
-### 🤖 AI Tabanlı Tahmin
-- **Facebook Prophet**
-- Mevsimsellik + Tatil + Kampanya etkisi
+- Satın alma davranışı  
+- Sepet büyüklüğü  
+- Harcama frekansı  
 
-### 📈 İstatistiksel Tahmin
+### Kullanılan Teknikler
+
+- **Elbow Method** → Optimum K seçimi  
+- **3D Scatter Plot** → Segmentlerin uzaysal görselleştirilmesi  
+
+> Bu yapı, doğrudan **kişiselleştirilmiş pazarlama, kampanya hedefleme ve churn analizi** altyapısı sağlar.
+
+---
+
+## 3️⃣ 📈 Zaman Serisi & Forecasting Motoru
+
+Sadece tahmin yapmaz, **verinin zaman içindeki hikayesini çözer.**
+
+### 🔄 Çift Motorlu Tahmin Sistemi
+
+- **Prophet (Meta AI)**
+  - Tatil etkileri
+  - Karmaşık trend
+  - Düzensiz periyotlar
+
 - **Holt-Winters (Exponential Smoothing)**
-- Trend + Sezonsallık analizi
+  - Hızlı
+  - Stabil
+  - İstatistiksel tahminleme
+
+### 🧩 Zaman Serisi Ayrıştırma
+
+- Trend  
+- Seasonality  
+- Residual  
+
+### 📊 Güven Aralığı (Confidence Interval)
+
+Tahminlerin:
+- Alt sınır
+- Üst sınır
+
+değerlerini göstererek **risk kontrollü planlama** sağlar.
 
 ---
 
-# 🎯 Dinamik Persona Simülatörü (What-If Analysis)
+## 4️⃣ 🎯 Next-Gen Strateji Simülatörü (A/B Testing & Pricing AI)
 
-Bu modül, stratejik karar senaryolarının **gerçek zamanlı simülasyonunu** sağlar.
+Platformun **karar destek zirvesi**.
 
-> "Fiyatı %10 artırırsak ne olur?"  
-> "Bu markada indirimi %5 düşürürsek satışlar nasıl etkilenir?"
+### 🧪 A/B Senaryo Simülasyonu
 
-### ⚡ Anlık Tahmin Motoru
-- Girilen parametrelere göre **saniyeler içinde fiyat & talep tahmini**
+Mevcut durum ile hedeflenen senaryo:
 
-### 📉 Sensitivity Curve (Hassasiyet Eğrisi)
-- Fiyat değişimlerinin hedef metrikler üzerindeki **elastikiyetini** gösterir.
+- Ciro  
+- Kâr  
+- Sipariş  
+- Marj  
+
+bazında **yan yana karşılaştırılır.**
+
+### 📊 Görsel Karar Destek Araçları
+
+- **Gauge Charts** → KPI hedef yakınlığı  
+- **Delta Metrikleri** → Yüzdesel değişim & etki analizi  
+
+### 🤖 AI Fiyat Optimizasyon Eğrisi
+
+Makine öğrenmesi destekli algoritma:
+
+> **"Maksimum kâr için ideal fiyat noktası nedir?"**
+
+sorusuna **otomatik zirve tespiti** yaparak cevap verir.
 
 ---
 
-# 📊 Gelişmiş Görselleştirme Katmanı
-
-### 🌍 Hierarchical Treemap
-- Bölge → Eyalet → Kategori bazlı **ciro akış analizi**
-
-### 🔵 Bubble & Hexbin Maps
-- Fiyat, indirim ve talep arasındaki **çok boyutlu korelasyon görselleştirmesi**
-
-### 🧪 Residual Analysis
-- Model hata dağılımının **normal dağılıma uygunluğunu test eden regresyon diyagramları**
-
----
-
-## 🛠 Kullanılan Teknolojiler
+# 🛠 Teknik Altyapı (Tech Stack)
 
 | Katman | Teknolojiler |
-|-----------|----------------|
-| Arayüz & UI | Streamlit, Custom CSS |
-| Veri İşleme | Pandas, NumPy, Scikit-Learn |
-| Görselleştirme | Plotly (Interactive), Seaborn, Matplotlib |
-| Yapay Zekâ & Forecast | XGBoost, LightGBM, Prophet, LIME, SHAP |
-| İstatistik | Statsmodels (Holt-Winters), SciPy |
+|---------|----------------|
+| Framework | Streamlit (Multi-Page SaaS Architecture) |
+| Data Engineering | Pandas, NumPy, Scikit-Learn |
+| Machine Learning | XGBoost, LightGBM, Random Forest, K-Means |
+| Time Series | Prophet, Statsmodels (Holt-Winters) |
+| Visualization | Plotly Express & Graph Objects |
+| UI/UX | Custom CSS, Metric Cards, Modern Dashboard UI |
 
 ---
-## 📌 Not
 
-Bu platform, **yüksek hacimli ticari veriler üzerinde gerçek zamanlı analiz, karar destek ve fiyat optimizasyonu sağlamak amacıyla geliştirilmiş ileri düzey bir yapay zekâ tabanlı analitik sistemdir.**
-# 🚀 Kurulum & Çalıştırma
+# 📌 Kurulum & Çalıştırma
 
-```bash
-# Bağımlılıkları yükle
-pip install -r requirements.txt
 
-# Uygulamayı çalıştır
-streamlit run indian.py
+
+
+
+
+
+    ├── 3_📈_Zaman_Serisi.py        # Forecasting & Trend Analizi
+    └── 4_🎯_Strateji_Simulatoru.py # A/B Testi & Fiyat Optimizasyonu

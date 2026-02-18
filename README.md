@@ -1,103 +1,103 @@
-# 🧠 AI Retail Strategy and Pricing Intelligence Platform
+Bu proje; **perakende sektöründe büyük veri (Big Data) setlerini stratejik karar destek mekanizmalarına dönüştürmek** amacıyla tasarlanmış, **Data Engineering ve Machine Learning disiplinlerini harmanlayan ileri seviye bir analitik platformdur**.
 
-Bu platform, **perakende sektöründe veriye dayalı stratejik karar alma süreçlerini optimize etmek** ve **fiyatlandırma zekâsı oluşturmak** amacıyla geliştirilmiş **uçtan uca bir analitik çözümdür**. Karar mekanizmalarını yalnızca tahminlerle değil, **Açıklanabilir Yapay Zekâ (XAI)** ve **dinamik senaryo simülasyonları** ile destekler.
-
----
-
-## 🚀 Proje Özellikleri
-
-### 🔄 Dinamik Veri Ön İşleme
-- Gerçek zamanlı veri temizleme  
-- Kategorik dönüşüm  
-- Veri sızıntısı (leakage) korumalı pipeline mimarisi  
-
-### 🤖 AutoML Mimarisi
-- 6 yüksek performanslı algoritmanın otomatik yarışması:
-  - Linear Regression  
-  - Decision Tree  
-  - Random Forest  
-  - XGBoost  
-  - LightGBM  
-  - Ensemble (Voting)
-
-- Değerlendirme metrikleri:
-  - **R²**
-  - **MAE**
-  - **RMSE**
-
-### 🔍 Explainable AI (XAI)
-- **LIME** ile lokal açıklamalar  
-- **SHAP** ile global açıklamalar  
-- Model kararlarının hem tekil hem de stratejik seviyede yorumlanabilirliği
-
-### 📊 Zenginleştirilmiş Keşifsel Veri Analizi (EDA)
-- 15+ interaktif görselleştirme:
-  - Zaman serisi trend analizi  
-  - Pazar payı dağılımı  
-  - Fiyat elastikiyeti  
-  - Hiyerarşik veri haritaları  
-
-### 🧑‍💼 Persona Simülatörü
-- Müşteri profili + ürün segmenti bazlı:
-  - Fiyat tahmini  
-  - Dinamik hassasiyet analizi  
+Ramazan serisinin **2. haftasında**, ilk projenin üzerine **Explainable AI (XAI)** ve **Time Series Forecasting** katmanları eklenerek geliştirilmiştir.
 
 ---
 
-## 🏗️ Veri Ön İşleme ve Pipeline Mimarisi
+# 🏗️ Sistem Mimarisi ve Pipeline Akışı
 
-### 🧹 Veri Temizleme
-- Eksik değerler (NaN), istatistiksel sapmaları önlemek adına **satır bazlı** olarak temizlenmiştir.
-
-### 🔡 Kategorik Kodlama
-- `State`, `Zone`, `Category`, `Brand Type` gibi değişkenler **Label Encoding** yöntemi ile dönüştürülmüştür.
-
-### 🛡 Leakage Guard (Sızıntı Korumasi)
-Modelin **ezber yapmasını (overfitting)** önlemek için, tahmin anında bilinemeyecek aşağıdaki değişkenler otomatik olarak özellik setinden çıkarılır:
-
-- Revenue  
-- Units Sold  
-- Final Price  
-
-### 💾 Feature Persistence
-- **Session State yönetimi** sayesinde:
-  - Kullanıcının hariç tuttuğu özellikler
-  - Model parametreleri
-  - Pipeline ayarları  
-uygulama boyunca korunur.
+Platform, ham veriyi alıp **aksiyon alınabilir stratejik içgörülere** dönüştürürken aşağıdaki katmanlardan geçer:
 
 ---
 
-## 🏆 AutoML Model Havuzu ve Şampiyon Model Seçimi
+## 1️⃣ Veri Mühendisliği & Preprocessing (Data Engine)
 
-Platform, **en yüksek R² skoruna sahip modeli otomatik olarak “Şampiyon Model”** ilan eder ve tüm analizleri bu model üzerinden yürütür.
+### 🎯 Target Leakage Guard
+Modelin gelecekteki bilgileri (**Revenue, Units Sold, Final Price**) kullanarak *hile yapmasını* engellemek için **dinamik feature exclusion mekanizması** kurulmuştur.
 
-| Tip | Yöntem | Avantaj |
-|------|----------|------------|
-| XGBoost / LightGBM | Boosting | Yüksek tahmin gücü & hız |
-| Random Forest | Bagging | Düşük varyans & stabilite |
-| Voting Ensemble | Hybrid | Modellerin kolektif zekâsı |
-| Linear Regression | İstatistiksel | Katsayı yorumlanabilirliği |
+### 🔡 Label Encoding & Optimization
+Kategorik değişkenler (**Brand Type, Zone, Category**) modelin **hiyerarşik ilişkileri anlayabileceği** şekilde encode edilirken **bellek ve hız optimizasyonu** sağlanmıştır.
+
+### 🧹 Statik & Dinamik Temizlik
+- Eksik değerler (**NaN**)  
+- Aykırı değerler (**Outliers**)  
+
+**IQR yöntemi** ile analiz edilerek temizlenmiştir.
 
 ---
 
-## 📈 Analitik Kapasite ve Karar Destek Mekanizmaları
+## 2️⃣ AutoML & Model Yarışması (Model Laboratory)
 
-### ⏳ Zaman Serisi Analizi
+Proje, tek bir algoritmaya güvenmek yerine **Model Yarışması (Leaderboard)** mimarisi ile çalışır.
+
+### 🔬 Kullanılan Algoritmalar
+- XGBoost  
+- LightGBM  
+- Random Forest  
+- Voting Ensemble (Hibrit Model)
+
+### 📏 Değerlendirme Metrikleri
+- **R²** → Model başarısı  
+- **MAE** → Ortalama mutlak hata  
+- **RMSE** → Hata kareler ortalaması  
+
+### 🏆 Champion Model Selection
+Sistem, **en yüksek R² değerine sahip modeli otomatik olarak "Şampiyon Model"** ilan eder ve **tüm dashboard analizleri bu beyin üzerine inşa edilir**.
+
+---
+
+## 3️⃣ Explainable AI (XAI) & Karar Şeffaflığı
+
+Yapay zekanın **neden bu sonucu verdiğini açıklamak** için iki güçlü metodoloji entegre edilmiştir:
+
+### 🌍 Global Explanation — SHAP
+Modelin genel stratejisinde **hangi değişkenlerin daha etkili olduğunu** gösterir.  
+*(Örn: İndirim oranı, Marka tipi, Bölge, Kampanya etkisi)*
+
+### 🔍 Local Explanation — LIME
+Tekil işlem ve ürün bazında, **modelin verdiği kararın gerekçelerini** açıklar.
+
+---
+
+## 4️⃣ Zaman Serisi & Forecasting Katmanı
+
+Geçmiş **36 aylık veri** kullanılarak geleceğe yönelik projeksiyonlar üretilir:
+
+### 🤖 AI Tabanlı Tahmin
 - **Facebook Prophet**
-- **Holt-Winters**
-- Gelecek **30 günlük satış projeksiyonu**
+- Mevsimsellik + Tatil + Kampanya etkisi
 
-### 💰 Fiyat Hassasiyeti Analizi
-- Fiyat değişimlerinin talep üzerindeki etkisini gösteren **elastikiyet eğrileri**
+### 📈 İstatistiksel Tahmin
+- **Holt-Winters (Exponential Smoothing)**
+- Trend + Sezonsallık analizi
 
-### 🌍 Hiyerarşik Analiz
-- Bölge → Eyalet → Kategori bazlı:
-  - İnteraktif **Treemap** ciro analizi
+---
 
-### 🧪 Hata Teşhisi
-- Residuals (artık hata) dağılım grafikleri  
-- Gerçek vs tahmin regresyon diyagramları  
+# 🎯 Dinamik Persona Simülatörü (What-If Analysis)
+
+Bu modül, stratejik karar senaryolarının **gerçek zamanlı simülasyonunu** sağlar.
+
+> "Fiyatı %10 artırırsak ne olur?"  
+> "Bu markada indirimi %5 düşürürsek satışlar nasıl etkilenir?"
+
+### ⚡ Anlık Tahmin Motoru
+- Girilen parametrelere göre **saniyeler içinde fiyat & talep tahmini**
+
+### 📉 Sensitivity Curve (Hassasiyet Eğrisi)
+- Fiyat değişimlerinin hedef metrikler üzerindeki **elastikiyetini** gösterir.
+
+---
+
+# 📊 Gelişmiş Görselleştirme Katmanı
+
+### 🌍 Hierarchical Treemap
+- Bölge → Eyalet → Kategori bazlı **ciro akış analizi**
+
+### 🔵 Bubble & Hexbin Maps
+- Fiyat, indirim ve talep arasındaki **çok boyutlu korelasyon görselleştirmesi**
+
+### 🧪 Residual Analysis
+- Model hata dağılımının **normal dağılıma uygunluğunu test eden regresyon diyagramları**
 
 ---
 
@@ -112,8 +112,14 @@ Platform, **en yüksek R² skoruna sahip modeli otomatik olarak “Şampiyon Mod
 | İstatistik | Statsmodels (Holt-Winters), SciPy |
 
 ---
-
 ## 📌 Not
-Bu platform, **yüksek hacimli ticari veriler üzerinde gerçek zamanlı analiz, karar destek ve fiyat optimizasyonu sağlamak amacıyla geliştirilmiş ileri düzey bir yapay zekâ tabanlı analitik sistemdir.**
 
 Bu platform, **yüksek hacimli ticari veriler üzerinde gerçek zamanlı analiz, karar destek ve fiyat optimizasyonu sağlamak amacıyla geliştirilmiş ileri düzey bir yapay zekâ tabanlı analitik sistemdir.**
+# 🚀 Kurulum & Çalıştırma
+
+```bash
+# Bağımlılıkları yükle
+pip install -r requirements.txt
+
+# Uygulamayı çalıştır
+streamlit run indian.py

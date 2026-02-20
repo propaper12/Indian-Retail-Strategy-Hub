@@ -1,62 +1,39 @@
 import streamlit as st
 import pandas as pd
-from utils import load_data, set_design
+import os
+from utils import set_design
 
-# Sayfa ayari
-st.set_page_config(page_title="AI Strategy Hub", layout="wide")
+# Sayfa ayarları
+st.set_page_config(page_title="E-Ticaret Analiz Merkezi", layout="wide")
 set_design()
 
-st.title("AI Strategy Hub Pro")
-st.markdown("### E-Ticaret Fiyatlandirma ve Buyume Analitigi")
+st.title(" E-Ticaret Strateji ve Gelir Analizi")
 
-st.markdown("""
-Bu proje, veri analizi ve yapay zeka kullanarak sirket stratejilerini belirlemek icin yapilmistir.
-Soldaki menuden istediginiz sayfaya gidebilirsiniz.
+def load_data_from_file():
+    file_name = "indian_ecommerce_pricing_revenue_growth_36_months.csv"
+    
+    if os.path.exists(file_name):
+        df = pd.read_csv(file_name)
+        df['order_date'] = pd.to_datetime(df['order_date'])
+        return df
+    else:
+        return None
 
-**Neler Yapabiliriz?**
-1.  **Veri Analizi:** Satislarimiz ne durumda?
-2.  **AutoML:** Fiyat tahmini yapan yapay zeka modelleri.
-3.  **Zaman Serisi:** Gelecek ay satislar ne olacak?
-4.  **Strateji:** Fiyati degistirirsek karimiz ne olur?
-""")
+if 'df_raw' not in st.session_state:
+    df = load_data_from_file()
+    if df is not None:
+        st.session_state['df_raw'] = df
+        st.success(f" Veri seti başarıyla yüklendi: {len(df)} satır işleme hazır.")
+    else:
+        st.error(" Veri seti dosyası bulunamadı! Lütfen GitHub deponuzun ana dizininde 'indian_ecommerce_pricing_revenue_growth_36_months.csv' dosyasının olduğundan emin olun.")
+        st.stop()
 
-# Veriyi yukluyorum
-df = load_data()
+df = st.session_state['df_raw']
 
-if df is None:
-    st.error("Veri dosyasi bulunamadi! Lutfen 'indian_ecommerce...csv' dosyasini ana dizine koyun.")
-    st.stop()
+st.divider()
+c1, c2, c3 = st.columns(3)
+c1.metric("Toplam Sipariş", f"{len(df):,}")
+c2.metric("Toplam Ciro (Revenue)", f"₹ {df['revenue'].sum():,.0f}")
+c3.metric("Ortalama İndirim", f"% {df['discount_percent'].mean():.1f}")
 
-# --- SIDEBAR (AYARLAR) ---
-# Buradaki ayarlari 'session_state' icine atiyorum ki diger sayfalarda da kullanabileyim
-with st.sidebar:
-    st.header("Genel Ayarlar")
-    
-    all_cols = df.columns.tolist()
-    
-    # Hedef degisken
-    default_target = "base_price" if "base_price" in all_cols else all_cols[0]
-    target_col = st.selectbox("Hedef Degisken (Target)", all_cols, index=all_cols.index(default_target))
-    
-    # Gereksiz kolonlari cikariyorum
-    exclude_list = [target_col, "order_id", "order_date", "month", "day_of_week", "year"]
-    potential_leakage = ["final_price", "revenue", "units_sold", "discount_percent"]
-    
-    feature_candidates = [c for c in all_cols if c not in exclude_list and c not in potential_leakage]
-    
-    # Secilen ozellikler
-    selected_features = st.multiselect(
-        "Model Ozellikleri", 
-        feature_candidates,
-        default=feature_candidates[:5]
-    )
-    
-    split_ratio = st.slider("Test Verisi Orani", 10, 40, 20) / 100
-    
-    # Session State'e kaydetme (Diger sayfalar buradan okuyacak)
-    st.session_state['df_raw'] = df
-    st.session_state['target_col'] = target_col
-    st.session_state['selected_features'] = selected_features
-    st.session_state['split_ratio'] = split_ratio
-    
-    st.success("Ayarlar Kaydedildi! Diger sayfalara gecebilirsiniz.")
+st.info("👈 Diğer analiz ve ML modülleri için soldaki menüyü kullanabilirsiniz.")

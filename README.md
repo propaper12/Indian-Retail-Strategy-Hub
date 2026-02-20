@@ -1,6 +1,7 @@
 # 🇮🇳 AI Strategy Hub Pro: E-Ticaret Büyüme & Fiyatlandırma Zekası
 
 Bu proje, **büyük e-ticaret veri setlerini** işleyerek stratejik karar destek mekanizmalarına dönüştüren, **Data Engineering ve Advanced Machine Learning** disiplinlerini harmanlayan uçtan uca bir analitik platformdur.
+Projeyi denemek için streamlit sayfası:https://an-open-source-real-time-financial-lakehouse-project-yjuh6geau.streamlit.app/
 
 Başlangıçta temel bir analiz aracı olarak tasarlanan sistem; **Multi-Page App (Çok Sayfalı Uygulama)** mimarisine geçirilmiş, **K-Means Kümeleme**, **Gelişmiş Zaman Serisi Ayrışımı** ve **A/B Senaryo Simülatörü** ile donatılarak bir **"CEO Dashboard"** seviyesine taşınmıştır.
 
